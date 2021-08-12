@@ -1,4 +1,4 @@
-# VGG 1D-Convolution Architecture in Keras - For both Classification and Regression Problems
+# VGG 2D-Convolution Architecture in Keras - For both Classification and Regression Problems
 """Reference: [Very Deep Convolutional Networks for Large-Scale Image Recognition] (https://arxiv.org/abs/1409.1556)"""
 
 from keras.models import Model
@@ -16,14 +16,14 @@ def Conv_2D_Block(inputs, model_width, kernel):
 
 
 class VGG:
-    def __init__(self, length, width, num_channel, num_filters, problem_type='Regression', output_nums=1, dropout=False, dropout_rate=0.2):
+    def __init__(self, length, width, num_channel, num_filters, problem_type='Regression',
+                 output_nums=1, dropout_rate=False):
         self.length = length
         self.width = width
         self.num_channel = num_channel
         self.num_filters = num_filters
         self.problem_type = problem_type
         self.output_nums = output_nums
-        self.dropout = dropout
         self.dropout_rate = dropout_rate
 
     def VGG11(self):
@@ -70,7 +70,7 @@ class VGG:
         x = Flatten(name='flatten')(x)
         x = Dense(4096, activation='relu')(x)
         x = Dense(4096, activation='relu')(x)
-        if self.dropout:
+        if self.dropout_rate:
             x = Dropout(self.dropout_rate, name='Dropout')(x)
         outputs = Dense(self.output_nums, activation='linear')(x)
         if self.problem_type == 'Classification':
@@ -130,7 +130,7 @@ class VGG:
         x = Flatten(name='flatten')(x)
         x = Dense(4096, activation='relu')(x)
         x = Dense(4096, activation='relu')(x)
-        if self.dropout:
+        if self.dropout_rate:
             x = Dropout(self.dropout_rate, name='Dropout')(x)
         outputs = Dense(self.output_nums, activation='linear')(x)
         if self.problem_type == 'Classification':
@@ -190,7 +190,7 @@ class VGG:
         x = Flatten(name='flatten')(x)
         x = Dense(4096, activation='relu')(x)
         x = Dense(4096, activation='relu')(x)
-        if self.dropout:
+        if self.dropout_rate:
             x = Dropout(self.dropout_rate, name='Dropout')(x)
         outputs = Dense(self.output_nums, activation='linear')(x)
         if self.problem_type == 'Classification':
@@ -253,7 +253,7 @@ class VGG:
         x = Flatten(name='flatten')(x)
         x = Dense(4096, activation='relu')(x)
         x = Dense(4096, activation='relu')(x)
-        if self.dropout:
+        if self.dropout_rate:
             x = Dropout(self.dropout_rate, name='Dropout')(x)
         outputs = Dense(self.output_nums, activation='linear')(x)
         if self.problem_type == 'Classification':
