@@ -11,4 +11,6 @@ The models implemented in this repository are:
 # VGG Architectures
 ![VGG Architecture Params](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG.png "VGG Parameters")  
 
-The speciality about this model is its flexibility. Apart from choosing any of 5 available ResNet models in 1D, one can easily change the parameters such as number of input kernels/filters, number of classes for Classification tasks and number of extracted features for Regression tasks, etc. Details of the process are available in the attached Jupyter Notebooks containing a DEMO in the codes section.
+The speciality about this model is its flexibility. Apart from choosing any of 5 available ResNet models in 1D, one can easily change the parameters such as number of input kernels/filters, number of classes for Classification tasks and number of extracted features for Regression tasks, etc. Details of the process are available in the attached Jupyter Notebooks containing a DEMO in the codes section.  
+
+![VGG Architecture](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG%20Model.png "VGG Architecture 3D")  
