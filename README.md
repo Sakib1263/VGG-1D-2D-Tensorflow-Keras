@@ -16,7 +16,7 @@ The speciality about this model is its flexibility. The user has the option for:
 2. Number of input kernel/filter, commonly known as Width of the model.
 3. Number of classes for Classification tasks and number of extracted features for Regression tasks.
 4. Number of Channels in the Input Dataset.
-Details of the process are available in the DEMO provided in the codes section.  
+Details of the process are available in the DEMO provided in the codes section. The datasets used in the DEMO as also available in the 'Documents' folder.  
 
 A 3D view of the VGG Architecture is provided below for better clarification:
 ![VGG Architecture](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG%20Model.png "VGG Architecture 3D")  
