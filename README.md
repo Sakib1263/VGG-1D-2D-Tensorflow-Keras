@@ -9,6 +9,7 @@ The models implemented in this repository are:
 4. VGG19 (VGG_E)
 
 # VGG Architectures
+Details of the VGG models developed are provided in the following table from the original paper.
 ![VGG Architecture Params](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG.png "VGG Parameters")  
 
 The speciality about this model is its flexibility. The user has the option for: 
