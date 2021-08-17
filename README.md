@@ -12,6 +12,7 @@ The models implemented in this repository are:
 Details of the VGG models developed are provided in the following table from the original paper.
 ![VGG Architecture Params](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG.png "VGG Parameters")  
 
+# Supported Features
 The speciality about this model is its flexibility. The user has the option for: 
 1. Choosing any of 4 available VGG models for either 1D or 2D tasks.
 2. Number of input kernel/filter, commonly known as Width of the model.
