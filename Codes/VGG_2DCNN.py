@@ -1,4 +1,4 @@
-# VGG 1D-Convolution Architecture in Keras - For both Classification and Regression Problems
+# VGG 2D-Convolution Architecture in Keras - For both Classification and Regression Problems
 """Reference: [Very Deep Convolutional Networks for Large-Scale Image Recognition] (https://arxiv.org/abs/1409.1556)"""
 
 import tensorflow as tf
@@ -34,6 +34,63 @@ class VGG:
             x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
 
         # Block 2
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 1), 3)
+        if x.shape[1] <= 2:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
+        else:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
+
+        # Block 3
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 2), 3)
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 2), 3)
+        if x.shape[1] <= 2:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
+        else:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
+
+        # Block 4
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 3), 3)
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 3), 3)
+        if x.shape[1] <= 2:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
+        else:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
+
+        # Block 5
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 3), 3)
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 3), 3)
+        if x.shape[1] <= 2:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
+        else:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
+
+        # Fully Connected (MLP) block
+        x = tf.keras.layers.Flatten(name='flatten')(x)
+        x = tf.keras.layers.Dense(4096, activation='relu')(x)
+        x = tf.keras.layers.Dense(4096, activation='relu')(x)
+        if self.dropout_rate:
+            x = tf.keras.layers.Dropout(self.dropout_rate, name='Dropout')(x)
+        outputs = tf.keras.layers.Dense(self.output_nums, activation='linear')(x)
+        if self.problem_type == 'Classification':
+            outputs = tf.keras.layers.Dense(self.output_nums, activation='softmax')(x)
+
+        # Create model.
+        model = tf.keras.Model(inputs=inputs, outputs=outputs)
+
+        return model
+
+    def VGG13(self):
+        inputs = tf.keras.Input((self.length, self.width, self.num_channel))  # The input tensor
+        # Block 1
+        x = Conv_2D_Block(inputs, self.num_filters * (2 ** 0), 3)
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 0), 3)
+        if x.shape[1] <= 2:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
+        else:
+            x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2), strides=(2, 2), padding="valid")(x)
+
+        # Block 2
+        x = Conv_2D_Block(x, self.num_filters * (2 ** 1), 3)
         x = Conv_2D_Block(x, self.num_filters * (2 ** 1), 3)
         if x.shape[1] <= 2:
             x = tf.keras.layers.MaxPooling2D(pool_size=(1, 1), strides=(2, 2), padding="valid")(x)
