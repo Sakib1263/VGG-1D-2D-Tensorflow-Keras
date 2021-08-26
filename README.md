@@ -3,10 +3,11 @@
 This repository contains an One-Dimentional (1D) and Two-Dimentional (2D) versions of original variants of VGG developed in KERAS along with implementation guidance (DEMO) in Jupyter Notebook. Read more about VGG Models in this original paper: https://arxiv.org/abs/1409.1556v6.  
 The models in this repository have been built following the original paper's implementation as much as possible, though more efficient implementation could be possible due to the advancements in this field since then. On the contrary, the models contain BatchNormalization (BN) blocks after Convolutional blocks and before activation, which is deviant from the original implementation. Read more about BN in this paper: https://arxiv.org/abs/1502.03167v3.  
 The models implemented in this repository are:
-1. VGG11 (VGG_A in the Original Paper)
-2. VGG16 (VGG_D)
-3. VGG16_v2 (VGG_C)
-4. VGG19 (VGG_E)
+1. VGG11 (A)
+2. VGG13 (B)
+3. VGG16 (C)
+4. VGG16_v2 (D)
+5. VGG19 (E)
 
 ## VGG Architectures
 Details of the VGG models developed are provided in the following table from the original paper.
