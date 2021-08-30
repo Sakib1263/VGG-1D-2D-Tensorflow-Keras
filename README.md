@@ -1,8 +1,8 @@
 # VGG-Model-Builder-Tensorflow-Keras
 
-This repository contains an One-Dimentional (1D) and Two-Dimentional (2D) versions of original variants of VGG developed in KERAS along with implementation guidance (DEMO) in Jupyter Notebook. Read more about VGG Models in this original paper: https://arxiv.org/abs/1409.1556v6.  
-The models in this repository have been built following the original paper's implementation as much as possible, though more efficient implementation could be possible due to the advancements in this field since then. On the contrary, the models contain BatchNormalization (BN) blocks after Convolutional blocks and before activation, which is deviant from the original implementation. Read more about BN in this paper: https://arxiv.org/abs/1502.03167v3.  
-The models implemented in this repository are:
+This repository contains an One-Dimentional (1D) and Two-Dimentional (2D) versions of original variants of VGG developed in KERAS along with implementation guidance (DEMO) in Jupyter Notebook. Read more about VGG Models in this original paper [1].
+The models in this repository have been built following the original paper's implementation as much as possible, though more efficient implementation could be possible due to the advancements in this field since then. On the contrary, the models contain BatchNormalization (BN) blocks after Convolutional blocks and before activation, which is deviant from the original implementation. Read more about BN in this paper [2] 
+The models implemented in this repository are: [1]
 1. VGG11 (A)
 2. VGG13 (B)
 3. VGG16 (C)
@@ -23,3 +23,7 @@ Details of the process are available in the DEMO provided in the codes section. 
 
 A 3D view of the VGG Architecture is provided below for better clarification:
 ![VGG Architecture](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG%20Model.png "VGG Architecture 3D")  
+
+## References  
+**[1]** 
+**[2]** 
