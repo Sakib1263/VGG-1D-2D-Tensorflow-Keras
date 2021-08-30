@@ -25,5 +25,5 @@ A 3D view of the VGG Architecture is provided below for better clarification:
 ![VGG Architecture](https://github.com/Sakib1263/VGG-Model-Builder-KERAS/blob/main/Documents/Images/VGG%20Model.png "VGG Architecture 3D")  
 
 ## References  
-**[1]** 
-**[2]** 
+**[1]** Simonyan, K., & Zisserman, A. (2021). Very Deep Convolutional Networks for Large-Scale Image Recognition. arXiv.org. Retrieved 30 August 2021, from https://arxiv.org/abs/1409.1556.  
+**[2]** Ioffe, S., & Szegedy, C. (2021). Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift. arXiv.org. Retrieved 30 August 2021, from https://arxiv.org/abs/1502.03167.  
